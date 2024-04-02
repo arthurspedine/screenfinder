@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // TODO get the type from api to know the type of the title
+        // https://www.omdbapi.com/
         while (true) {
             welcome();
             showOptions();

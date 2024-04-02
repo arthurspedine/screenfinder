@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Alura/Java/API/dependencias/gson-2.10.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../.jar/gson-2.10.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
