@@ -1,5 +1,6 @@
-package options;
+package request;
 
+import manager.JsonController;
 import models.*;
 
 import java.util.Scanner;
@@ -17,13 +18,20 @@ public class MakeRequest {
         }
     }
 
-    public void selectType(TitleOmdb titleOmdb) {
+    private void selectType(TitleOmdb titleOmdb) {
+        Title title;
         if (titleOmdb.type().equals("series")) {
-            TvSerie newTvSerie = new TvSerie(titleOmdb);
-            System.out.println(newTvSerie);
+            title = new TvSerie(titleOmdb);
         } else {
-            Movie newMovie = new Movie(titleOmdb);
-            System.out.println(newMovie);
+            title = new Movie(titleOmdb);
+        }
+        JsonController jsonController = new JsonController();
+        System.out.println("Continue adding? ");
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.nextLine().equals("no")) {
+            jsonController.addTitles(false, title);
+        } else {
+            jsonController.addTitles(true, title);
         }
     }
 }

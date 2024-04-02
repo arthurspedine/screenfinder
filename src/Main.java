@@ -1,10 +1,10 @@
-import models.HttpConnection;
-import options.MakeRequest;
+import request.MakeRequest;
 
 import java.util.Scanner;
 public class Main {
 
     static String[] validOptions = {"1", "2", "3"};
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // TODO get the type from api to know the type of the title

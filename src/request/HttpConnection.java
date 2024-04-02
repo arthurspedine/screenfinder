@@ -1,8 +1,9 @@
-package models;
+package request;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import models.TitleOmdb;
 
 import java.io.IOException;
 import java.net.URI;
