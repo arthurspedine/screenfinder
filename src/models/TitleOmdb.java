@@ -5,7 +5,7 @@ public record TitleOmdb(
         String year,
         String released,
         String runtime,
-        String Genre,
+        String genre,
         String plot,
         String type
     ) {
