@@ -19,11 +19,11 @@ public class Main {
             }
             switch (option) {
                 case "1" -> {
-                    MakeRequest makeRequest = new MakeRequest();
-                    makeRequest.requestTitle(scanner);
+                    System.out.println("Case 1");
                 }
                 case "2" -> {
-                    System.out.println("Case 2");
+                    MakeRequest makeRequest = new MakeRequest();
+                    makeRequest.requestTitle(scanner);
                 }
                 case "3" -> {
                     System.out.println("See you soon!");
