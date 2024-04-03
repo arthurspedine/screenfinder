@@ -12,7 +12,7 @@ public class ListTitles extends JsonConfiguration {
 
     public void getAllTitleList() {
         List<Title> titleList = readJsonLines();
-        if (!isListNull(titleList)) {
+        if (titleList != null) {
             System.out.println("--> Titles List");
             for (Title title : titleList) {
                 formatTitle(title);
@@ -23,7 +23,7 @@ public class ListTitles extends JsonConfiguration {
     }
 
     public void getAllMoviesList() {
-        if (!isListNull(readJsonLines())) {
+        if (readJsonLines() != null) {
             List<Movie> movieList = filterList(readJsonLines(), "movie");
             if (movieList.isEmpty()) {
                 System.out.println("Sorry, but you don't added any movie yet.");
@@ -38,7 +38,7 @@ public class ListTitles extends JsonConfiguration {
     }
 
     public void getAllTvSeries() {
-        if (!isListNull(readJsonLines())) {
+        if (readJsonLines() != null) {
             List<TvSeries> tvSeriesList = filterList(readJsonLines(), "series");
             if (tvSeriesList.isEmpty()) {
                 System.out.println("Sorry, but you don't added any Tv Series yet.");

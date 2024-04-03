@@ -6,11 +6,9 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import models.Title;
 import models.TitleOmdb;
-import request.MakeRequest;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class JsonConfiguration {
@@ -42,7 +40,7 @@ public class JsonConfiguration {
             List<Title> existTitles = new ArrayList<>();
             try {
                 for (TitleOmdb titleOmdb : titlesArray) {
-                    Title title = new MakeRequest().setCategory(titleOmdb);
+                    Title title = new TitleManager().setCategory(titleOmdb);
                     existTitles.add(title);
                 }
                 return existTitles;
@@ -55,7 +53,7 @@ public class JsonConfiguration {
         return null;
     }
 
-    public void createJson() {
+    private void createJson() {
         File file = new File(fileName);
         try {
             if (file.createNewFile())
@@ -63,5 +61,9 @@ public class JsonConfiguration {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void listNullMsg() {
+        System.out.println("The file is empty, make sure to add some titles before trying to list them.");
     }
 }

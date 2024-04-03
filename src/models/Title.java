@@ -34,4 +34,6 @@ public class Title {
     public String getPlot() {
         return plot;
     }
+
+    public String getType() { return type; }
 }

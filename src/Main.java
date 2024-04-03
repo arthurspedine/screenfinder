@@ -1,4 +1,4 @@
-import manager.JsonController;
+import options.ListTitles;
 import request.MakeRequest;
 
 import java.util.Scanner;
@@ -10,8 +10,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         // TODO get the type from api to know the type of the title
         // https://www.omdbapi.com/
+        welcome();
         while (true) {
-            welcome();
             showOptions();
             System.out.println("Enter a option:");
             String option = scanner.nextLine();
@@ -21,7 +21,24 @@ public class Main {
             }
             switch (option) {
                 case "1" -> {
-                    System.out.println("Case 1");
+                    System.out.println("Select the type of list do you want to get");
+                    System.out.println(" 1- All titles");
+                    System.out.println(" 2- Movie titles");
+                    System.out.println(" 3- Tv Series titles");
+                    System.out.println(" - Type anything else to cancel");
+
+                    option = scanner.nextLine();
+                    ListTitles listTitles = new ListTitles();
+                    switch (option) {
+                        case "1" ->
+                            listTitles.getAllTitleList();
+                        case "2" ->
+                            listTitles.getAllMoviesList();
+                        case "3" ->
+                            listTitles.getAllTvSeries();
+                    }
+
+
                 }
                 case "2" -> {
                     MakeRequest makeRequest = new MakeRequest();
@@ -31,11 +48,11 @@ public class Main {
                     } while (scanner.nextLine().equalsIgnoreCase("yes"));
 
                     // MAKE THE JSON UPTADE
-                    int totalListSize = makeRequest.jsonController.listLength();
+                    int totalListSize = makeRequest.listLength();
                     if (totalListSize > 0) {
                         System.out.println("You chose in total " + totalListSize + " titles! Do you want to add them? 'yes' or 'no'");
                         if (scanner.nextLine().equalsIgnoreCase("yes")) {
-                            makeRequest.jsonController.updateJson();
+                            makeRequest.updateJson();
                         }
                     } else {
                         System.out.println("You selected 0 titles, redirecting to home page!");
@@ -50,22 +67,23 @@ public class Main {
         }
     }
 
-    public static void welcome() {
-        System.out.println("\nWelcome to ScreenFinder!");
+    private static void welcome() {
+        System.out.println("Welcome to ScreenFinder!");
         System.out.println("Here you can create your own favorite title list!\n");
     }
 
-    public static void showOptions() {
+    private static void showOptions() {
         System.out.println("What do you want to do now?");
         System.out.println(" 1- Check my list");
         System.out.println(" 2- Add new titles");
-        System.out.println(" 3- Exit\n");
+        System.out.println(" 3- Exit");
     }
 
-    public static boolean isValidOption(String option) {
+    private static boolean isValidOption(String option) {
         for (String i : validOptions)
             if (option.equals(i))
                 return true;
         return false;
     }
+
 }

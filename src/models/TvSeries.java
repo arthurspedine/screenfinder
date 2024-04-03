@@ -1,9 +1,9 @@
 package models;
 
-public class TvSerie extends Title{
+public class TvSeries extends Title{
     private String year;
 
-    public TvSerie(TitleOmdb titleOmdb) {
+    public TvSeries(TitleOmdb titleOmdb) {
         super(titleOmdb.title(), titleOmdb.released(), titleOmdb.genre(), titleOmdb.plot(), titleOmdb.type());
         if (titleOmdb.yearReleased() != null)
             setYearReleased(titleOmdb.yearReleased());
