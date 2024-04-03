@@ -6,14 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonController {
-    private List<Title> newTitleList = new ArrayList<>();
-
-    public void addTitles(Boolean continueAdding, Title title) {
-        newTitleList.add(title);
-//        System.out.println(newTitleList);
-        if (!continueAdding) {
-            new JsonConfiguration().updateJson(newTitleList);
-        }
+    private final List<Title> titleToBeAddedList = new ArrayList<>();
+    public void addTitleInList(Title title) {
+        titleToBeAddedList.add(title);
+        System.out.println("Title added successfully! Title name: " + title.getTitle());
+    }
+    public void updateJson() {
+        new JsonConfiguration().updateJson(titleToBeAddedList);
     }
 
+    public int listLength() {
+        return titleToBeAddedList.size();
+    }
 }

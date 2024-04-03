@@ -5,12 +5,14 @@ public class Title {
     private String yearReleased;
     private String genre;
     private String plot;
+    private String type;
 
-    public Title(String title, String yearReleased, String genre, String plot) {
+    public Title(String title, String yearReleased, String genre, String plot, String type) {
         this.title = title;
         this.yearReleased = yearReleased;
         this.genre = genre;
         this.plot = plot;
+        this.type = type;
     }
 
     public String getTitle() {

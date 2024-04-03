@@ -4,7 +4,7 @@ public class Movie extends Title{
     private String runtime;
 
     public Movie(TitleOmdb titleOmdb) {
-        super(titleOmdb.title(), titleOmdb.released(), titleOmdb.genre(), titleOmdb.plot());
+        super(titleOmdb.title(), titleOmdb.released(), titleOmdb.genre(), titleOmdb.plot(), titleOmdb.type());
         this.runtime = titleOmdb.runtime();
     }
 

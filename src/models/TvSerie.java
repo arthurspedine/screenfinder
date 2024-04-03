@@ -4,7 +4,7 @@ public class TvSerie extends Title{
     private String year;
 
     public TvSerie(TitleOmdb titleOmdb) {
-        super(titleOmdb.title(), titleOmdb.released(), titleOmdb.genre(), titleOmdb.plot());
+        super(titleOmdb.title(), titleOmdb.released(), titleOmdb.genre(), titleOmdb.plot(), titleOmdb.type());
         this.year = titleOmdb.year();
     }
 

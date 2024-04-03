@@ -1,3 +1,4 @@
+import manager.JsonController;
 import request.MakeRequest;
 
 import java.util.Scanner;
@@ -24,7 +25,16 @@ public class Main {
                 }
                 case "2" -> {
                     MakeRequest makeRequest = new MakeRequest();
-                    makeRequest.requestTitle(scanner);
+                    do {
+                        makeRequest.requestTitle(scanner);
+                        System.out.println("Do you like to continue adding? Type 'yes' or 'no'");
+                    } while (scanner.nextLine().equalsIgnoreCase("yes"));
+
+                    // MAKE THE JSON UPTADE
+                    System.out.println("You chose in total " + makeRequest.jsonController.listLength() + " titles! Do you want to add them? 'yes' or 'no'");
+                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                        makeRequest.jsonController.updateJson();
+                    }
                 }
                 case "3" -> {
                     System.out.println("See you soon!");

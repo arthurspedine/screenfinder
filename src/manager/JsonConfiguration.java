@@ -12,7 +12,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class JsonConfiguration {
 
@@ -26,7 +25,6 @@ public class JsonConfiguration {
             mergedList.addAll(readJsonLines());
         }
         mergedList.addAll(titleList);
-        System.out.println(mergedList);
         try {
             FileWriter fileWriter = new FileWriter(fileName);
             fileWriter.write(gson.toJson(mergedList));
@@ -38,9 +36,19 @@ public class JsonConfiguration {
     }
     public List<Title> readJsonLines() {
         try {
-            JsonReader jsonReader = new JsonReader(new FileReader(fileName));
-            Title[] titlesArray = gson.fromJson(jsonReader, TitleOmdb[].class); // getting just Title[].class not TitleOmdb
-            return List.of(titlesArray);
+            FileReader fileReader = new FileReader(fileName);
+            JsonReader jsonReader = new JsonReader(fileReader);
+            TitleOmdb[] titlesArray = gson.fromJson(jsonReader, TitleOmdb[].class);
+            List<Title> existTitles = new ArrayList<>();
+            try {
+                for (TitleOmdb titleOmdb : titlesArray) {
+                    Title title = new MakeRequest().setCategory(titleOmdb);
+                    existTitles.add(title);
+                }
+                return existTitles;
+            } catch (NullPointerException e) {
+                return null;
+            }
         } catch (FileNotFoundException e) {
             createJson();
         }
@@ -55,14 +63,5 @@ public class JsonConfiguration {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    public static void main(String[] args) {
-        JsonConfiguration jsonManager = new JsonConfiguration();
-        Scanner scanner = new Scanner(System.in);
-        MakeRequest makeRequest = new MakeRequest();
-        makeRequest.requestTitle(scanner);
-        List<Title> jsonItems = jsonManager.readJsonLines();
-
     }
 }
