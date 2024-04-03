@@ -22,5 +22,45 @@
     "Genre": "Comedy, Drama, Music",
     "Plot": "A chance encounter between a down-and-out music business executive, and a young singer songwriter new to Manhattan, turns into a promising collaboration between the two talents.",
     "Type": "movie"
+  },
+  {
+    "Runtime": "148 min",
+    "Title": "Spider-Man: No Way Home",
+    "YearReleased": "17 Dec 2021",
+    "Genre": "Action, Adventure, Fantasy",
+    "Plot": "With Spider-Man\u0027s identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+    "Type": "movie"
+  },
+  {
+    "Runtime": "194 min",
+    "Title": "Titanic",
+    "YearReleased": "19 Dec 1997",
+    "Genre": "Drama, Romance",
+    "Plot": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+    "Type": "movie"
+  },
+  {
+    "Runtime": "151 min",
+    "Title": "Armageddon",
+    "YearReleased": "01 Jul 1998",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Plot": "After discovering that an asteroid the size of Texas will impact Earth in less than a month, NASA recruits a misfit team of deep-core drillers to save the planet.",
+    "Type": "movie"
+  },
+  {
+    "Runtime": "105 min",
+    "Title": "Pixels",
+    "YearReleased": "24 Jul 2015",
+    "Genre": "Action, Comedy, Fantasy",
+    "Plot": "When aliens misinterpret video feeds of classic arcade games as a declaration of war, they attack the Earth in the form of the video games.",
+    "Type": "movie"
+  },
+  {
+    "Runtime": "143 min",
+    "Title": "The Avengers",
+    "YearReleased": "04 May 2012",
+    "Genre": "Action, Sci-Fi",
+    "Plot": "Earth\u0027s mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+    "Type": "movie"
   }
 ]
