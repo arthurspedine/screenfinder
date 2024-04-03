@@ -31,10 +31,16 @@ public class Main {
                     } while (scanner.nextLine().equalsIgnoreCase("yes"));
 
                     // MAKE THE JSON UPTADE
-                    System.out.println("You chose in total " + makeRequest.jsonController.listLength() + " titles! Do you want to add them? 'yes' or 'no'");
-                    if (scanner.nextLine().equalsIgnoreCase("yes")) {
-                        makeRequest.jsonController.updateJson();
+                    int totalListSize = makeRequest.jsonController.listLength();
+                    if (totalListSize > 0) {
+                        System.out.println("You chose in total " + totalListSize + " titles! Do you want to add them? 'yes' or 'no'");
+                        if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                            makeRequest.jsonController.updateJson();
+                        }
+                    } else {
+                        System.out.println("You selected 0 titles, redirecting to home page!");
                     }
+
                 }
                 case "3" -> {
                     System.out.println("See you soon!");
