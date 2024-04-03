@@ -5,6 +5,8 @@ public class Movie extends Title{
 
     public Movie(TitleOmdb titleOmdb) {
         super(titleOmdb.title(), titleOmdb.released(), titleOmdb.genre(), titleOmdb.plot(), titleOmdb.type());
+        if (titleOmdb.yearReleased() != null)
+            setYearReleased(titleOmdb.yearReleased());
         this.runtime = titleOmdb.runtime();
     }
 

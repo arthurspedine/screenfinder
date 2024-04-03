@@ -5,6 +5,8 @@ public class TvSerie extends Title{
 
     public TvSerie(TitleOmdb titleOmdb) {
         super(titleOmdb.title(), titleOmdb.released(), titleOmdb.genre(), titleOmdb.plot(), titleOmdb.type());
+        if (titleOmdb.yearReleased() != null)
+            setYearReleased(titleOmdb.yearReleased());
         this.year = titleOmdb.year();
     }
 

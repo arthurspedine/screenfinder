@@ -19,6 +19,10 @@ public class Title {
         return title;
     }
 
+    public void setYearReleased(String yearReleased) {
+        this.yearReleased = yearReleased;
+    }
+
     public String getYearReleased() {
         return yearReleased;
     }
