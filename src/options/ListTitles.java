@@ -26,7 +26,7 @@ public class ListTitles extends JsonConfiguration {
         if (readJsonLines() != null) {
             List<Movie> movieList = filterList(readJsonLines(), "movie");
             if (movieList.isEmpty()) {
-                System.out.println("Sorry, but you don't added any movie yet.");
+                System.out.println("Sorry, but you didn't add any movies yet.");
                 return;
             }
             System.out.println("--> Movie List");
@@ -41,7 +41,7 @@ public class ListTitles extends JsonConfiguration {
         if (readJsonLines() != null) {
             List<TvSeries> tvSeriesList = filterList(readJsonLines(), "series");
             if (tvSeriesList.isEmpty()) {
-                System.out.println("Sorry, but you don't added any Tv Series yet.");
+                System.out.println("Sorry, but you didn't add any Tv Series yet.");
                 return;
             }
             System.out.println("--> Tv Series List");

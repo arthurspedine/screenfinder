@@ -29,7 +29,7 @@ public class JsonConfiguration {
             fileWriter.close();
             System.out.println("The file has been updated!");
         } catch (IOException e) {
-            System.out.println("A Error happened while updating the .json file!");
+            System.out.println("An Error happened while updating the .json file!");
         }
     }
     public List<Title> readJsonLines() {
