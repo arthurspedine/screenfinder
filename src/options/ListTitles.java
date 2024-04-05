@@ -14,9 +14,7 @@ public class ListTitles extends JsonConfiguration {
         List<Title> titleList = readJsonLines();
         if (titleList != null) {
             System.out.println("--> Titles List");
-            for (Title title : titleList) {
-                formatTitle(title);
-            }
+            titleList.forEach(this::formatTitle);
         } else {
             listNullMsg();
         }
@@ -30,9 +28,7 @@ public class ListTitles extends JsonConfiguration {
                 return;
             }
             System.out.println("--> Movie List");
-            for (Movie movie : movieList) {
-                movieInformation(movie);
-            }
+            movieList.forEach(this::movieInformation);
         } else
             listNullMsg();
     }
@@ -45,9 +41,7 @@ public class ListTitles extends JsonConfiguration {
                 return;
             }
             System.out.println("--> Tv Series List");
-            for (TvSeries tvSeries : tvSeriesList) {
-                tvSeriesInformation(tvSeries);
-            }
+            tvSeriesList.forEach(this::tvSeriesInformation);
         } else
             listNullMsg();
     }
